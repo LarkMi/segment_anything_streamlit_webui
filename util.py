@@ -1,11 +1,7 @@
 
 from segment_anything import SamPredictor, SamAutomaticMaskGenerator, sam_model_registry
 import torch
-from PIL import Image
 import numpy as np
-from streamlit_drawable_canvas import st_canvas
-import pandas as pd
-import random
 from distinctipy import distinctipy
 import streamlit as st
 
