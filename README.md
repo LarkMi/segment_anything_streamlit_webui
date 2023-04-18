@@ -22,3 +22,9 @@ wget https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth -O sam
 cd ../
 streamlit run sam_st.py
 ```
+
+# Docker
+```
+docker build -t sam_st .
+docker run --gpus "device=1" -itd -p 84:8501 sam_st:latest bash -c 'streamlit run sam_st.py'
+```
