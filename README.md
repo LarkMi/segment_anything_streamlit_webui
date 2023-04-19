@@ -1,2 +1,2 @@
 # Segment anything-streamlit webui
-![demo](./demo/sam_st-·-Streamlit.webm)
+![Alt Text](https://github.com/LarkMi/segment_anything_streamlit_webui/blob/main/demo/sam_st-%C2%B7-Streamlit.webm?raw=true)
