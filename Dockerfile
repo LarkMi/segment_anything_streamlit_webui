@@ -4,7 +4,11 @@ ENV DEBIAN_FRONTEND noninteractive
 
 WORKDIR /home
 
+COPY 7fa2af80.pub /tmp/
+COPY 3bf863cc.pub /tmp/
 
+RUN apt-key add /tmp/7fa2af80.pub &&\
+   apt-key add /tmp/3bf863cc.pub
 
 RUN echo 'deb http://mirrors.cloud.tencent.com/ubuntu/ focal main restricted universe multiverse\n\
 deb http://mirrors.cloud.tencent.com/ubuntu/ focal-security main restricted universe multiverse\n\
@@ -37,9 +41,9 @@ RUN git clone http://deepmaterial.work/git/luziqing/segment_anything_streamlit.g
     pip install --no-cache-dir -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple &&\
     cd streamlit_dc/streamlit_drawable_canvas/frontend && npm install && npm run build && cd ../../ && pip install -e . && \
     cd /home/segment_anything_streamlit && mkdir checkpoint && \
-    wget https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth -O checkpoint\sam_vit_b_01ec64.pth && \
-    wget https://dl.fbaipublicfiles.com/segment_anything/sam_vit_l_0b3195.pth -O checkpoint\sam_vit_l_0b3195.pth && \
-    wget https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth -O checkpoint\sam_vit_h_4b8939.pth
+    wget https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth -O checkpoint/sam_vit_b_01ec64.pth && \
+    wget https://dl.fbaipublicfiles.com/segment_anything/sam_vit_l_0b3195.pth -O checkpoint/sam_vit_l_0b3195.pth && \
+    wget https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth -O checkpoint/sam_vit_h_4b8939.pth
 
 
 WORKDIR /home/segment_anything_streamlit

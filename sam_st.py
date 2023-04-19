@@ -1,3 +1,5 @@
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = '1'
 import streamlit as st
 import torch
 from PIL import Image
