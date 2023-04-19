@@ -1,1 +1,2 @@
-# segment_anything_streamlit_webui
+# Segment anything-streamlit webui
+![demo](./demo/sam_st-·-Streamlit.webm)
