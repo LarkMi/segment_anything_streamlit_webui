@@ -2,13 +2,11 @@
 ## 1. install streamlit_drawable_canvas 
 ```
 pip uninstall streamlit-drawable-canvas
-cd streamlit_dc/frontend
+cd streamlit_dc/streamlit_drawable_canvas/frontend
 npm install
 npm run build
-
+cd streamlit_dc/
 pip install -e .
-
-npm run start
 ```
 
 ## 2. run streamlit
@@ -26,5 +24,5 @@ streamlit run sam_st.py
 # Docker
 ```
 docker build -t sam_st .
-docker run --gpus "device=1" -itd -p 84:8501 sam_st:latest bash -c 'streamlit run sam_st.py'
+docker run --gpus "device=1" -itd -p 84:8501 --name sam_st sam_st:latest bash -c 'streamlit run sam_st.py'
 ```

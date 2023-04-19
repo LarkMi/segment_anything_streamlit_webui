@@ -1,5 +1,7 @@
 FROM nvidia/cuda:11.2.2-cudnn8-devel-ubuntu20.04
 
+ENV DEBIAN_FRONTEND noninteractive
+
 WORKDIR /home
 
 COPY 7fa2af80.pub /tmp/
@@ -41,6 +43,7 @@ RUN git clone http://deepmaterial.work/git/luziqing/segment_anything_streamlit.g
     cd /home/segment_anything_streamlit && mkdir checkpoint && cd checkpoint && \
     wget https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth -O sam_vit_b_01ec64.pth && \
     wget https://dl.fbaipublicfiles.com/segment_anything/sam_vit_l_0b3195.pth -O sam_vit_l_0b3195.pth && \
-    wget https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth -O sam_vit_h_4b8939.pth
+    wget https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth -O sam_vit_h_4b8939.pth %% cd
+
 
 WORKDIR /home/segment_anything_streamlit
