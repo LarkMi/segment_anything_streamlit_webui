@@ -22,6 +22,7 @@ cd ../
 
 # 2. install dependencies and get checkpoints
 ```shell
+pip install --no-cache-dir git+https://github.com/facebookresearch/segment-anything.git
 pip install -r requirements.txt
 
 mkdir checkpoint
