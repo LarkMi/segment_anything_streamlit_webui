@@ -47,3 +47,4 @@ RUN git clone http://deepmaterial.work/git/luziqing/segment_anything_streamlit.g
 
 
 WORKDIR /home/segment_anything_streamlit
+
